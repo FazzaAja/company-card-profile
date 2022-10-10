@@ -54,6 +54,15 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'email' => 'required|email||ends_with:@gmail.com',
             'phone' => 'required|digits_between:11,14|numeric|starts_with:62',
+            'instagram' => 'nullable|url|starts_with:https://www.instagram.com',
+            'facebook' => 'nullable|url|starts_with:https://www.facebook.com',
+            'tiktok' => 'nullable|url|starts_with:https://www.tiktok.com',
+            'twitter' => 'nullable|url|starts_with:https://www.youtube.com',
+            'youtube' => 'nullable|url|starts_with:https://www.linkedin.com',
+            'linkedin' => 'nullable|url|starts_with:https://twitter.com',
+            'web' => 'nullable|url',
+            'pinterest' => 'nullable|url|starts_with:https://id.pinterest.com',
+            'soundcloud' => 'nullable|url|starts_with:https://soundcloud.com',
         ]);
 
         // upload img
@@ -115,6 +124,15 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'email' => 'required|email||ends_with:@gmail.com',
             'phone' => 'required|digits_between:11,14|numeric|starts_with:62',
+            'instagram' => 'nullable|url|starts_with:https://www.instagram.com',
+            'facebook' => 'nullable|url|starts_with:https://www.facebook.com',
+            'tiktok' => 'nullable|url|starts_with:https://www.tiktok.com',
+            'twitter' => 'nullable|url|starts_with:https://www.youtube.com',
+            'youtube' => 'nullable|url|starts_with:https://www.linkedin.com',
+            'linkedin' => 'nullable|url|starts_with:https://twitter.com',
+            'web' => 'nullable|url',
+            'pinterest' => 'nullable|url|starts_with:https://id.pinterest.com',
+            'soundcloud' => 'nullable|url|starts_with:https://soundcloud.com',
         ]);
 
         $path = '';

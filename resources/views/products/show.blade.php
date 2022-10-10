@@ -21,7 +21,7 @@
                     @else
                         <img src="/asset/logo_no_bg.png" style="width:250px; height:250px;"  />
                     @endif
-                <img src="{{ $product->image }}" style="width:250px;
+                </td>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -57,7 +57,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Instagram:</strong>
-                <a href="https://www.instagram.com/{{ $product->instagram }}/">{{ $product->instagram }}</a>
+                <a href="{{ $product->instagram }}/">{{ $product->instagram }}</a>
             </div>
         </div>
     </div>

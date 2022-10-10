@@ -25,9 +25,8 @@
             <th>Nama</th>
             <th>Posisi</th>
             <th>Deskripsi</th>
-            <th>Email</th>
             <th>Phone</th>
-            <th>Instagram</th>
+            <th>Email</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($products as $product)
@@ -42,9 +41,8 @@
             <td>{{ $product->nama }}</td>
             <td>{{ $product->posisi }}</td>
             <td>{{ $product->deskripsi }}</td>
-            <td>{{ $product->email }}</td>
             <td>{{ $product->phone }}</td>
-            <td>{{ $product->instagram }}</td>
+            <td>{{ $product->email }}</td>
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
    

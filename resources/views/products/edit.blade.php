@@ -40,7 +40,7 @@
                 @if ($product->image)
                     <img src="/storage/{{ $product->image }}" class="img-preview w-25 h-25 m-3"  />
                 @else
-                    <img class="img-preview w-25 h-25 m-3"  />
+                    <img jclass="img-preview w-25 h-25 m-3"  />
                 @endif
                 
                 @error('image')
@@ -89,9 +89,57 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Instagram:</strong>
-                    <input type="text" name="instagram" value="{{ $product->instagram }}" class="form-control" placeholder="@">
+                    <input type="text" name="instagram" value="{{ $product->instagram }}" class="form-control" placeholder="https://">
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Facebook:</strong>
+                <input type="text" name="facebook" class="form-control" placeholder="https://" value="{{ $product->facebook }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tiktok:</strong>
+                <input type="text" name="tiktok" class="form-control" placeholder="https://" value="{{ $product->tiktok }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Twitter:</strong>
+                <input type="text" name="twitter" class="form-control" placeholder="https://" value="{{ $product->twitter }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>YouTube:</strong>
+                <input type="text" name="youtube" class="form-control" placeholder="https://" value="{{ $product->youtube }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Linkedin:</strong>
+                <input type="text" name="linkedin" class="form-control" placeholder="https://" value="{{ $product->linkedin }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Web Personal:</strong>
+                <input type="text" name="web" class="form-control" placeholder="https://" value="{{ $product->web }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Pinterest:</strong>
+                <input type="text" name="pinterest" class="form-control" placeholder="https://" value="{{ $product->pinterest }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>SoundCloud:</strong>
+                <input type="text" name="soundcloud" class="form-control" placeholder="https://" value="{{ $product->soundcloud }}">
+            </div>
+        </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
               <button type="submit" class="btn btn-primary">Submit</button>
             </div>

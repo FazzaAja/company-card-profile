@@ -77,7 +77,55 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Instagram:</strong>
-                <input type="text" name="instagram" class="form-control" placeholder="@" value="{{ old('instagram') }}">
+                <input type="text" name="instagram" class="form-control" placeholder="https://" value="{{ old('instagram') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Facebook:</strong>
+                <input type="text" name="facebook" class="form-control" placeholder="https://" value="{{ old('facebook') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tiktok:</strong>
+                <input type="text" name="tiktok" class="form-control" placeholder="https://" value="{{ old('tiktok') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Twitter:</strong>
+                <input type="text" name="twitter" class="form-control" placeholder="https://" value="{{ old('twitter') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>YouTube:</strong>
+                <input type="text" name="youtube" class="form-control" placeholder="https://" value="{{ old('youtube') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Linkedin:</strong>
+                <input type="text" name="linkedin" class="form-control" placeholder="https://" value="{{ old('linkedin') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Web Personal:</strong>
+                <input type="text" name="web" class="form-control" placeholder="https://" value="{{ old('web') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Pinterest:</strong>
+                <input type="text" name="pinterest" class="form-control" placeholder="https://" value="{{ old('pinterest') }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>SoundCloud:</strong>
+                <input type="text" name="soundcloud" class="form-control" placeholder="https://" value="{{ old('soundcloud') }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">

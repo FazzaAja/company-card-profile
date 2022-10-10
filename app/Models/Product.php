@@ -12,7 +12,8 @@ class Product extends Model
     use Sluggable;
 
     protected $fillable = [
-        'image', 'nama', 'slug', 'posisi', 'deskripsi', 'email', 'phone', 'instagram'
+        'image', 'nama', 'slug', 'posisi', 'deskripsi', 'email', 'phone', 'instagram',
+        'facebook', 'tiktok', 'twitter', 'youtube', 'linkedin', 'web', 'pinterest', 'soundcloud'
     ];
 
     public function sluggable(): array

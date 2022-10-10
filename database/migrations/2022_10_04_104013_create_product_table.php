@@ -23,6 +23,14 @@ return new class extends Migration
             $table->string('email');
             $table->bigInteger('phone');
             $table->string('instagram')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('tiktok')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('web')->nullable();
+            $table->string('pinterest')->nullable();
+            $table->string('soundcloud')->nullable();
             $table->timestamps();
         });
     }

@@ -28,17 +28,52 @@
     <!-- button section -->
     <section class="mt-5 m-auto h-[450px]   max-w-[300px]  ">
     <div class="flex flex-wrap justify-center items-center">
-      <a href="https://www.tiktok.com/@antarestar_outdoor?lang=en" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300"
-        >TIKTOK</a>
       @if ($product->instagram)
-        <a href="https://www.instagram.com/{{ $product->instagram }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">INSTAGRAM</a>
+        <a href="{{ $product->instagram }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">INSTAGRAM</a>
       @else
         <p class="hidden"></p>
       @endif
-      <a href="#" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">YOUTUBE</a>
-      <a href="#" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">TWITTER</a>
-      <a href="#" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">FACEBOOK</a>
-      </section>
+      @if ($product->facebook)
+        <a href="{{ $product->facebook }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">FACEBOOK</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+      @if ($product->tiktok)
+        <a href="{{ $product->tiktok }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">TIKTOK</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+      @if ($product->twitter)
+        <a href="{{ $product->twitter }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">TWITTER</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+      @if ($product->youtube)
+        <a href="{{ $product->youtube }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">YOUTUBEE</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+      @if ($product->linkedin)
+        <a href="{{ $product->linkedin }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">LINKEDIN</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+      @if ($product->web)
+        <a href="{{ $product->web }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">WEB PERSONAL</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+      @if ($product->pinterest)
+        <a href="{{ $product->pinterest }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">PINTEREST</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+      @if ($product->soundcloud)
+        <a href="{{ $product->soundcloud }}" class="py-2.5 w-full border-2 border-white bg-white text-center font-extrabold  text-slate-900 mt-3 mx-3 hover:bg-transparent hover:border-2 hover:border-white hover:text-white hover:animation duration-300">SOUND CLOUD</a>
+      @else
+        <p class="hidden"></p>
+      @endif
+     </section>
     </div>
 
 </body>
