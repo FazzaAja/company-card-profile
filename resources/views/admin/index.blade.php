@@ -33,7 +33,12 @@
         @foreach ($products as $product)
         <tr>
             <td>{{ ++$i }}</td>
-            <td><img src="{{ $product->image }}" style="width:40px; height:40px;"></td>
+            <td>@if ($product->image)
+                    <img src="/storage/{{ $product->image }}" style="width:40px; height:40px;"  />
+                @else
+                    <img src="/asset/logo_no_bg.png" style="width:40px; height:40px;"  />
+                @endif
+            </td>
             <td>{{ $product->nama }}</td>
             <td>{{ $product->posisi }}</td>
             <td>{{ $product->deskripsi }}</td>

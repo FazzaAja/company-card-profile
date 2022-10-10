@@ -10,6 +10,10 @@ use function GuzzleHttp\Promise\all;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -50,7 +54,6 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'email' => 'required|email||ends_with:@gmail.com',
             'phone' => 'required|digits_between:11,14|numeric|starts_with:62',
-            'instagram' => 'alpha_dash'
         ]);
 
         // upload img
@@ -63,7 +66,7 @@ class ProductController extends Controller
             $path = $request->file('image')->storeAs('image',  $newName, 'public');
         }
 
-        $requestData['image'] = '/storage/' . $path;
+        $requestData['image'] = $path;
         Product::create($requestData);
 
         return redirect()->route('admin.index')
@@ -112,24 +115,21 @@ class ProductController extends Controller
             'deskripsi' => 'required',
             'email' => 'required|email||ends_with:@gmail.com',
             'phone' => 'required|digits_between:11,14|numeric|starts_with:62',
-            'instagram' => 'alpha_dash'
         ]);
 
         $path = '';
 
         if ($request->file('image')) {
+            if ($product->image) {
+                unlink(public_path('/storage/' . $product->image));
+            }
             $extension = $request->file('image')->getClientOriginalExtension();
             $newName = $request->nama . '-' . now()->timestamp . '.' . $extension;
             $path = $request->file('image')->storeAs('image',  $newName, 'public');
-            // if (Product::exists($path)) {
-            //     $product->delete($product->image);
-            // }
-            // if (Storage::exists($path)) {
-            //     unlink($path);
-            // }
+            $requestData['image'] = $path;
+        } else {
+            unset($requestData['image']);
         }
-
-        $requestData['image'] = '/storage/' . $path;
 
         $product->update($requestData);
 
@@ -145,7 +145,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         if ($product->image) {
-            unlink(public_path($product->image));
+            unlink(public_path('/storage/' . $product->image));
         }
         $product->delete();
 

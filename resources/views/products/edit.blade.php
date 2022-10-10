@@ -38,7 +38,7 @@
                 
 
                 @if ($product->image)
-                    <img src="{{ $product->image }}" class="img-preview w-25 h-25 m-3"  />
+                    <img src="/storage/{{ $product->image }}" class="img-preview w-25 h-25 m-3"  />
                 @else
                     <img class="img-preview w-25 h-25 m-3"  />
                 @endif

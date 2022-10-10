@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Controllers\ProductController;
 
@@ -15,11 +16,7 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// admin
+Auth::routes();
 
 Route::resource('products', ProductController::class)->except(['show', 'index', 'create', 'edit']);
 
@@ -41,6 +38,15 @@ Route::get('admin/create', [
 Route::get('admin/{slug}', [
     'as' => 'products.show',
     'uses' => 'ProductController@show'
+]);
+
+//
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
+
+Route::get('/{slug}', [
+    'as' => 'profile.detail',
+    'uses' => 'HomeController@show'
 ]);
 
 //

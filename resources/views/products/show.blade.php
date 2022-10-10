@@ -16,7 +16,12 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Foto:</strong>
-                <td><img src="{{ $product->image }}" style="width:250px; height:250px;"></td>
+                <td>@if ($product->image)
+                        <img src="/storage/{{ $product->image }}" style="width:250px; height:250px;"  />
+                    @else
+                        <img src="/asset/logo_no_bg.png" style="width:250px; height:250px;"  />
+                    @endif
+                <img src="{{ $product->image }}" style="width:250px;
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
