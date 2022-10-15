@@ -11,6 +11,17 @@
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="" method="get">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search.." name="search">
+                    <button class="btn btn-secondary" type="submit" >Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
@@ -53,13 +64,14 @@
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-warning">Delete</button>
                 </form>
             </td>
         </tr>
         @endforeach
     </table>
-  
-    {!! $products->links() !!}
-      
+    <div class="my-5">
+        {{ $products->withQueryString()->links() }}
+    </div>  
+
 @endsection

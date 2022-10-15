@@ -19,9 +19,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->paginate(5);
+        $search = $request->search;
+        $products = Product::where('nama', 'LIKE', '%' . $search . '%')
+            ->orWhere('posisi', 'LIKE', '%' . $search . '%')
+            ->orWhere('deskripsi', 'LIKE', '%' . $search . '%')
+            ->orWhere('phone', 'LIKE', '%' . $search . '%')
+            ->orWhere('email', 'LIKE', '%' . $search . '%')
+            ->paginate(5);
 
         return view('admin.index', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -57,9 +63,9 @@ class ProductController extends Controller
             'instagram' => 'nullable|url|starts_with:https://www.instagram.com',
             'facebook' => 'nullable|url|starts_with:https://www.facebook.com',
             'tiktok' => 'nullable|url|starts_with:https://www.tiktok.com',
-            'twitter' => 'nullable|url|starts_with:https://www.youtube.com',
-            'youtube' => 'nullable|url|starts_with:https://www.linkedin.com',
-            'linkedin' => 'nullable|url|starts_with:https://twitter.com',
+            'youtube' => 'nullable|url|starts_with:https://www.youtube.com',
+            'linkedin' => 'nullable|url|starts_with:https://www.linkedin.com',
+            'twitter' => 'nullable|url|starts_with:https://twitter.com',
             'web' => 'nullable|url',
             'pinterest' => 'nullable|url|starts_with:https://id.pinterest.com',
             'soundcloud' => 'nullable|url|starts_with:https://soundcloud.com',
@@ -127,9 +133,9 @@ class ProductController extends Controller
             'instagram' => 'nullable|url|starts_with:https://www.instagram.com',
             'facebook' => 'nullable|url|starts_with:https://www.facebook.com',
             'tiktok' => 'nullable|url|starts_with:https://www.tiktok.com',
-            'twitter' => 'nullable|url|starts_with:https://www.youtube.com',
-            'youtube' => 'nullable|url|starts_with:https://www.linkedin.com',
-            'linkedin' => 'nullable|url|starts_with:https://twitter.com',
+            'youtube' => 'nullable|url|starts_with:https://www.youtube.com',
+            'linkedin' => 'nullable|url|starts_with:https://www.linkedin.com',
+            'twitter' => 'nullable|url|starts_with:https://twitter.com',
             'web' => 'nullable|url',
             'pinterest' => 'nullable|url|starts_with:https://id.pinterest.com',
             'soundcloud' => 'nullable|url|starts_with:https://soundcloud.com',

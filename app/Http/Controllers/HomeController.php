@@ -4,20 +4,27 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use WithPagination;
+
+
 
 class HomeController extends Controller
 {
+    protected $paginationTheme = 'bootstrap';
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::latest()->paginate(6);
+        $search = $request->search;
+        $products = Product::where('nama', 'LIKE', '%' . $search . '%')
+            ->orWhere('posisi', 'LIKE', '%' . $search . '%')
+            ->orWhere('deskripsi', 'LIKE', '%' . $search . '%')
+            ->paginate(8);
 
-        return view('profile.home', compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 6);
+        return view('profile.home', compact('products'));
     }
 
     public function show($slug)
