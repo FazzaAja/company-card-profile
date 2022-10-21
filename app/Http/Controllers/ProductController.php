@@ -27,10 +27,10 @@ class ProductController extends Controller
             ->orWhere('deskripsi', 'LIKE', '%' . $search . '%')
             ->orWhere('phone', 'LIKE', '%' . $search . '%')
             ->orWhere('email', 'LIKE', '%' . $search . '%')
-            ->paginate(5);
+            ->paginate(20);
 
         return view('admin.index', compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 20);
     }
 
     /**

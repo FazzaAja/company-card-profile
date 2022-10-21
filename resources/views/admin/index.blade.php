@@ -3,11 +3,8 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Data Profile Card</h2>
-            </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('admin.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('admin.create') }}"> Create New Profile</a>
             </div>
         </div>
     </div>
@@ -17,7 +14,7 @@
             <form action="" method="get">
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Search.." name="search">
-                    <button class="btn btn-secondary" type="submit" >Search</button>
+                    <button class="btn btn-secondary text-black" type="submit" >Search</button>
                 </div>
             </form>
         </div>
