@@ -1,22 +1,12 @@
 @extends('products.layout')
  
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('admin.create') }}"> Create New Profile</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <form action="" method="get">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search.." name="search">
-                    <button class="btn btn-secondary text-black" type="submit" >Search</button>
-                </div>
-            </form>
+    
+<div class="p-10 center">
+    <div class="row " data-theme="night">
+        <div class="flex my-3">
+              <a class="btn" href="{{ route('admin.create') }}"> Create New Profile</a>
+           
         </div>
     </div>
    
@@ -26,9 +16,9 @@
         </div>
     @endif
    
-    <table class="table table-bordered">
+    <table class="table table-zebra table-fixed  ">
         <tr>
-            <th>No</th>
+            <th >No</th>
             <th>Foto</th>
             <th>Nama</th>
             <th>Posisi</th>
@@ -40,11 +30,15 @@
         @foreach ($products as $product)
         <tr>
             <td>{{ ++$i }}</td>
-            <td>@if ($product->image)
+            <td>
+                <div class="avatar">
+                <div class="mask mask-squircle w-12 h-12"> @if ($product->image)
                     <img src="/storage/{{ $product->image }}" style="width:40px; height:40px;"  />
                 @else
                     <img src="/asset/logo_no_bg.png" style="width:40px; height:40px;"  />
-                @endif
+                @endif</div>
+                </div>
+               
             </td>
             <td>{{ $product->nama }}</td>
             <td>{{ $product->posisi }}</td>
@@ -54,14 +48,14 @@
             <td>
                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
    
-                    <a class="btn btn-info" href="{{ route('products.show',$product->slug) }}">Show</a>
+                    <a class="badge badge-info" href="{{ route('products.show',$product->slug) }}">Show</a>
     
-                    <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
+                    <a class="badge badge-primary" href="{{ route('products.edit',$product->id) }}">Edit</a>
    
                     @csrf
                     @method('DELETE')
       
-                    <button type="submit" class="btn btn-warning">Delete</button>
+                    <button type="submit" class="badge badge-md text-white">Delete</button>
                 </form>
             </td>
         </tr>
@@ -71,4 +65,5 @@
         {{ $products->withQueryString()->links() }}
     </div>  
 
+</div>
 @endsection

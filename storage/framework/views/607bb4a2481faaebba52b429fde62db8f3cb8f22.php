@@ -1,15 +1,16 @@
 
   
 <?php $__env->startSection('content'); ?>
- 
-<div class="row">
+ <div class="container">
+<div class="grid grid-cols-2 gap-4">
     <div class="col-lg-6">
-        <h2 class="txt-dark h-2 text-bold">Show Profile</h2>
+        <h2 class="text-3xl  font-bold mx-auto"> Profile</h2>
         <div class="pull-right">
-            <a class="btn btn-primary my-2" href="<?php echo e(route('admin.index')); ?>"> Back</a>
-            <a class="btn btn-primary" href="<?php echo e(route('products.edit',$product->id)); ?>">Edit</a>
+            <a class="badge badge-primary my-2" href="<?php echo e(route('admin.index')); ?>"> Back</a>
+            <a class="badge badge-primary" href="<?php echo e(route('products.edit',$product->id)); ?>">Edit</a>
         </div>
         <div class="row">
+            <div class="card w-96 bg-base-100 shadow-xl">
             <?php if($product->image): ?>
                         <img src="/storage/<?php echo e($product->image); ?>" class="img-preview w-50 h-50 m-3"/>
                     <?php else: ?>
@@ -23,13 +24,14 @@
            <h4 style="font-weight: 600">Email <span>:</span> <span style="font-weight:400"><?php echo e($product->email); ?></span></h4>
            <h4 style="font-weight: 600">Phone <span>:</span> <span style="font-weight:400"><?php echo e($product->phone); ?></span></h4>
         </div>
+        </div>
     </div>
-    <div class="col-lg-6">
-        <table class="table">
+    <div class="w-full">
+        <table class="table table-fixed table-zebra w-full">
             <thead>
-                <tr>
-                    <th>Sosmed</th>
-                    <th>Status</th>				
+                <tr class="font-bold text-3xl">
+                    <th class="font-bold text-xl">Sosmed</th>
+                    <th class="font-bold text-xl">Status</th>				
                 </tr>
             </thead>
             <tbody>
@@ -110,4 +112,5 @@
     </div>
 </div>
 <?php $__env->stopSection(); ?>
+</div>
 <?php echo $__env->make('admin.layout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Laravel\company-card-profile\resources\views/products/show.blade.php ENDPATH**/ ?>

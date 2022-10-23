@@ -1,20 +1,20 @@
 
   
 <?php $__env->startSection('content'); ?>
- <body class="bg-base-200">
+ <body class="bg-base-200" data-theme="winter">
     <div class="p-10">
 
       <div class="md:px-96">
         <div class="form-control">
           <form action="" method="get">
-            <div class="input-group input-group-lg mb-10">
-              <input type="text" placeholder="Search…" class="input input-bordered w-full h-16" name="search"/>
-              <button class="btn btn-lg btn-square" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                </svg>
-              </button>
-            </div>
+            <div class="form-control m-5">
+  <div class="input-group">
+    <input type="text" placeholder="Search…" class="input h-16 w-full  input-bordered border-primary"  name="search" />
+    <button class="btn btn-lg btn-primary bg-primary" type="submit">
+      <svg xmlns="http://www.w3.org/2000/svg" class=" h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+    </button>
+  </div>
+</div>
           </form>
         </div>
       </div>

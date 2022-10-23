@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>">
+<html lang="<?php echo e(str_replace('_', '-', app()->getLocale())); ?>" data-theme="night">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,13 +9,11 @@
 
     <title>Admin Antarestar</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+  
+    
 
     <!-- Scripts -->
-    <?php echo app('Illuminate\Foundation\Vite')(['resources/sass/app.scss', 'resources/js/app.js']); ?>
+    
 
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css"
@@ -23,57 +21,59 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+         container: {
+      center: true,
+      padding: "16px",
+    },
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
 </head>
 <body>
     
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
-                    Antarestar
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php echo e(__('Toggle navigation')); ?>">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        <?php if(auth()->guard()->guest()): ?>
-                            <?php if(Route::has('login')): ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
-                                </li>
-                            <?php endif; ?>
-
-                            <?php if(Route::has('register')): ?>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Register')); ?></a>
-                                </li>
-                            <?php endif; ?>
-                        <?php else: ?>
-                                    <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
+    <div id="app" class="">
+        
+        <div class="navbar bg-base-200 ">
+   <div class="container">        
+  <div class="flex-1">
+    <a class="btn btn-ghost normal-case text-xl" href="<?php echo e(url('/')); ?>">Antarestar</a>
+  </div>
+   <ul>
+                <li> <a class=" badge-primary badge" href="<?php echo e(route('logout')); ?>"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        <?php echo e(__('Logout')); ?>
+                    <?php echo e(__('Logout')); ?>
 
-                                    </a>
-
-                                    <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
+          </a>
+<form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="">
                                         <?php echo csrf_field(); ?>
-                                    </form>
+                                    </form></li>
+            </ul>
+  <div class="flex-none gap-2">
+     <form action="" method="get">
+        <div class="input-group mx-3 items-center" name="search">
+    <input type="text" placeholder="Search…" class="input  input-bordered" name="search"  />
+    <button class="btn  btn-square" type="submit">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+    </button>
+  </div>
+            </form>
+           
+        
                                 
-                        <?php endif; ?>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    </div> 
+  </div>
+</div>
+
+       
 
         <main class="py-4">
     
