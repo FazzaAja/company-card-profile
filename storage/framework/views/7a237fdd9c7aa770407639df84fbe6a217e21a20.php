@@ -14,15 +14,15 @@
 </div>
    
 <?php if($errors->any()): ?>
-    <div class="">
-       
-        <ul>
-            <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <li><?php echo e($error); ?></li>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </ul>
-    </div>
-<?php endif; ?>
+        <div class="text-center alert alert-error block">
+            <strong>Whoops!</strong> There were some problems with your input.<br><br>
+            <ul class="block">
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li><?php echo e($error); ?></li><br>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </ul>
+        </div>
+    <?php endif; ?>
    
 
 <!-- component -->
@@ -198,9 +198,9 @@ unset($__errorArgs, $__bag); ?>
               for="time"
               class="mb-3 block text-base font-medium "
             >
-              Web Personal
+            SoundCloud
             </label>
-              <input type="text" name="web" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" placeholder="https://" value="<?php echo e(old('web')); ?>">
+              <input type="text" name="soundcloud" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" placeholder="https://" value="<?php echo e(old('soundcloud')); ?>">
           </div>
           
         </div>
@@ -222,9 +222,9 @@ unset($__errorArgs, $__bag); ?>
               for="time"
               class="mb-3 block text-base font-medium "
             >
-              SoundCloud    
+              Web Personal 
             </label>
-              <input type="text" name="soundcloud" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" placeholder="https://" value="<?php echo e(old('soundcloud')); ?>">
+              <input type="text" name="web" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md" placeholder="https://" value="<?php echo e(old('web')); ?>">
           </div>
       </div>
          

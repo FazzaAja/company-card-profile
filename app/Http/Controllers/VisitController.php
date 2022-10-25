@@ -31,11 +31,15 @@ class VisitController extends Controller
         $vcard->addJobtitle($product->posisi);
         $vcard->addRole($product->deskripsi);
         $vcard->addEmail($product->email);
-        $vcard->addPhoneNumber($product->phone, 'PREF;WORK');
-        $vcard->addPhoneNumber($product->phone, 'WORK');
+        $vcard->addPhoneNumber('+' . $product->phone, 'PREF;WORK');
+        $vcard->addPhoneNumber('+' . $product->phone, 'WORK');
         $vcard->addAddress(null, null, 'Jl. Harapan Indah Boulevard', 'Bekasi', 'Jawa Barat', '17214', 'Indonesia');
         $vcard->addLabel('Jl. Harapan Indah Boulevard, Bekasi, Jawa Barat, 17214, Indonesia');
-        $vcard->addURL('https://antarestar.com/');
+        if ($product->web) {
+            $vcard->addURL($product->web);
+        } else {
+            $vcard->addURL('https://antarestar.com/');
+        }
 
         $vcard->addPhoto(public_path('/storage/' . $product->image));
 
