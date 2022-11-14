@@ -17,9 +17,10 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->string('nama');
+            $table->string('title');
             $table->string('slug');
             $table->string('posisi');
-            $table->string('deskripsi');
+            $table->string('deskripsi')->nullable();
             $table->string('email');
             $table->bigInteger('phone');
             $table->string('instagram')->nullable();

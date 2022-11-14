@@ -22,7 +22,6 @@
             <th>Foto</th>
             <th>Nama</th>
             <th>Posisi</th>
-            <th>Deskripsi</th>
             <th>Phone</th>
             <th>Email</th>
             <th width="280px">Action</th>
@@ -42,7 +41,6 @@
             </td>
             <td>{{ $product->nama }}</td>
             <td>{{ $product->posisi }}</td>
-            <td>{{ $product->deskripsi }}</td>
             <td>{{ $product->phone }}</td>
             <td>{{ $product->email }}</td>
             <td>

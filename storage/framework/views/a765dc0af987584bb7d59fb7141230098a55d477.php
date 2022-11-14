@@ -22,7 +22,6 @@
             <th>Foto</th>
             <th>Nama</th>
             <th>Posisi</th>
-            <th>Deskripsi</th>
             <th>Phone</th>
             <th>Email</th>
             <th width="280px">Action</th>
@@ -42,7 +41,6 @@
             </td>
             <td><?php echo e($product->nama); ?></td>
             <td><?php echo e($product->posisi); ?></td>
-            <td><?php echo e($product->deskripsi); ?></td>
             <td><?php echo e($product->phone); ?></td>
             <td><?php echo e($product->email); ?></td>
             <td>

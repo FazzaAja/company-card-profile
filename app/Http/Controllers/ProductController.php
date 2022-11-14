@@ -49,15 +49,16 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Product $product)
     {
 
         $requestData = $request->all();
         $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'nama' => 'required',
+            'title' => 'required|unique:products,slug|alpha_dash',
             'posisi' => 'required',
-            'deskripsi' => 'required',
+            'deskripsi' => 'nullable',
             'email' => 'required|email||ends_with:@gmail.com',
             'phone' => 'required|digits_between:11,14|numeric|starts_with:62',
             'instagram' => 'nullable|url|starts_with:https://www.instagram.com',
@@ -127,7 +128,7 @@ class ProductController extends Controller
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024',
             'nama' => 'required',
             'posisi' => 'required',
-            'deskripsi' => 'required',
+            'deskripsi' => 'nullable',
             'email' => 'required|email||ends_with:@gmail.com',
             'phone' => 'required|digits_between:11,14|numeric|starts_with:62',
             'instagram' => 'nullable|url|starts_with:https://www.instagram.com',

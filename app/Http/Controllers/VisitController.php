@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use JeroenDesloovere\VCard\VCard;
+use JeroenDesloovere\VCard\VCardParser;
 
 class VisitController extends Controller
 {
@@ -52,7 +53,10 @@ class VisitController extends Controller
         return $vcard->download();
 
         // save vcard on disk
-        //$vcard->setSavePath('/path/to/directory');
-        //$vcard->save();
+        // $vcard->setSavePath('/path/to/directory');
+        // $vcard->save();
+
+        // $parser = VCardParser::parseFromFile('path//.vcf');
+        // echo $parser->getCardAtIndex(0)->fullname;
     }
 }

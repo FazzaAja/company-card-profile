@@ -132,7 +132,7 @@ class VCard
             'company',
             'ORG' . $this->getCharsetString(),
             $company
-            . ($department != '' ? ';' . $department : '')
+                . ($department != '' ? ';' . $department : '')
         );
 
         // if filename is empty, add to filename
@@ -652,7 +652,9 @@ class VCard
     protected function chunk_split_unicode($body, $chunklen = 76, $end = "\r\n")
     {
         $array = array_chunk(
-            preg_split("//u", $body, -1, PREG_SPLIT_NO_EMPTY), $chunklen);
+            preg_split("//u", $body, -1, PREG_SPLIT_NO_EMPTY),
+            $chunklen
+        );
         $body = "";
         foreach ($array as $item) {
             $body .= join("", $item) . $end;
@@ -751,7 +753,7 @@ class VCard
     public function getHeaders($asAssociative)
     {
         $contentType = $this->getContentType() . '; charset=' . $this->getCharset();
-        $contentDisposition = 'attachment; filename=' . $this->getFilename() . '.' . $this->getFileExtension();
+        $contentDisposition = 'attachment; filename=' . $this->getFilename() . '.' . 'vcf';
         $contentLength = mb_strlen($this->getOutput(), '8bit');
         $connection = 'close';
 
@@ -937,7 +939,8 @@ class VCard
      */
     private function setProperty($element, $key, $value)
     {
-        if (!in_array($element, $this->multiplePropertiesForElementAllowed)
+        if (
+            !in_array($element, $this->multiplePropertiesForElementAllowed)
             && isset($this->definedElements[$element])
         ) {
             throw VCardException::elementAlreadyExists($element);
